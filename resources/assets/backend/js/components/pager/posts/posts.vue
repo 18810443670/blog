@@ -102,6 +102,7 @@
                 let _this = this;
                 _this.listLoading = true;
                 let query = {
+                    page: _this.currentPage,
                     rows: _this.pageSize,
                     category_id: _this.category_id,
                     q: _this.q
@@ -132,9 +133,9 @@
                 this.getData();
             },
             handleCurrentChange(val) {
+                console.log(`当前页: ${val}`);
                 this.currentPage = val;
                 this.getData();
-                console.log(`当前页: ${val}`);
             },
             handleDistory: function (type, row) {
                 var _this = this, idsParam = {};
