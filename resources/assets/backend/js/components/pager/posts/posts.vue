@@ -36,8 +36,11 @@
                         </el-tag>
                     </template>
                 </el-table-column>
-                <el-table-column prop="created_at" :formatter="formatterDate" sortable label="日期"
-                                 width="250"></el-table-column>
+                <el-table-column  sortable label="日期" width="250">
+                    <template scope="scope">
+                        {{ scope.row.created_at }}
+                    </template>
+                </el-table-column>
                 <el-table-column inline-template :context="_self" label="操作" width="150">
                     <span class="fr">
                         <router-link :to="{ path: '/posts/edit/'+ row.id}">
@@ -124,13 +127,14 @@
                 });
             },
             handleSizeChange(val) {
-                //console.log(`每页 ${val} 条`);
+                console.log(`每页 ${val} 条`);
                 this.pageSize = val;
                 this.getData();
             },
             handleCurrentChange(val) {
                 this.currentPage = val;
-                //console.log(`当前页: ${val}`);
+                this.getData();
+                console.log(`当前页: ${val}`);
             },
             handleDistory: function (type, row) {
                 var _this = this, idsParam = {};
