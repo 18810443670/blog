@@ -33,7 +33,7 @@
         <div class="header-content">
             <hgroup>
                 <div class="avatar">
-                    <a href="{{ url('/') }}"><img src="{{ cdn('avatar/persimmon.jpg') }}" alt=""></a>
+                    <a href="{{ url('/') }}"><img src="{{ '/backend/images/logo.png' }}" alt=""></a>
                 </div>
                 <h1><a href="{{ url('/') }}">{{ bloginfo('site_name') }}</a></h1>
                 <div class="description">
