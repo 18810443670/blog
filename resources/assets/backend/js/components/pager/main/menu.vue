@@ -2,7 +2,7 @@
     <el-row class="panel">
         <el-col :span="24" class="panel-top">
             <el-col :span="20" style="font-size:26px;">
-                <span><img src="/backend/images/logo.png" class="logo" alt=""><i style="font-style:normal">MyPersimmon</i></span>
+                <span><img src="/backend/images/logo.png" class="logo" alt=""><i style="font-style:normal">顾浩的博客</i></span>
             </el-col>
             <el-col :span="4" class="rightbar">
                 <el-dropdown trigger="click"><span class="el-dropdown-link pit-username"><img :src="this.sysUserAvatar" class="head" onerror="javascript:this.src='/backend/images/logo.png'"> {{sysUserName}}</span>
