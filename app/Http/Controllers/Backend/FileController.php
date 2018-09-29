@@ -16,19 +16,20 @@ use Persimmon\Storage\QiniuUploads;
 class FileController extends Controller
 {
     
-    public function index(QiniuUploads $qiniuUploads, Request $request)
+    public function index(Request $request)
     {
-        $files = $qiniuUploads->localFiles($request);
+        $files = $request->file('file')->store('local');
+
         return response()->json($files);
     }
 
-    public function store(QiniuUploads $qiniuUploads, Request $request)
+    public function store(Request $request)
     {
-        $data = $qiniuUploads->uploads($request);
-        if ($data['status'] == 200) {
-            return $data;
-        }
-        return ['status' => 400, 'filename' => '', 'url' => ''];
+        $files = $request->file('file')->store('local');
+
+        $files = '/'.$files;
+
+        return ['status' => 200, 'filename' => $files, 'url' => $files];
     }
 
 
