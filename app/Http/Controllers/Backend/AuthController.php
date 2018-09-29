@@ -66,7 +66,7 @@ class AuthController extends Controller
         $date = str_ireplace('avatar_', '', !empty($user['avatar']) ? $user['avatar'] : 'avatar_1970-01-01');
         $carbon = Carbon::createFromTimestamp(strtotime($date))->addDays(30);
         if (empty($user['avatar']) || $carbon->toDateString() <= date('Y-m-d')) {
-            $avatar = (new QiniuUploads())->cacheGravatar($user['email']);
+            $avatar = "https://www.guhao1994.com/backend/images/logo.png";
             $user->avatar = $avatar;
             $user->save();
         } else {
