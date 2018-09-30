@@ -281,8 +281,10 @@
 						}
 						//thumb
 						if (res.thumb != '') {
+                            _this.imageUrl = res.thumb;
 							_this.fileList = [{url: res.thumb}]
 						}
+
 						_this.compileMarkdown();
 					} else {
 						_this.$message({
