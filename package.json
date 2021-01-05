@@ -9,7 +9,7 @@
   },
   "//": "最新版element-ui 1.2.1不支持total，必要可以把vue退到2.1.6，element-ui 1.1.6",
   "devDependencies": {
-    "axios": "^0.15.3",
+    "axios": "^0.21.1",
     "bootstrap-sass": "^3.3.7",
     "element-theme-default": "^1.2.1",
     "element-ui": "^1.2.9",
